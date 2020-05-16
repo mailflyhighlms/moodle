@@ -10861,7 +10861,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
  */
 .modchooser .modal-body {
   padding: 0;
-  height: 640px;
+  min-height: 640px;
   overflow-y: auto; }
   .modchooser .modal-body .loading-icon {
     opacity: 1; }
@@ -10869,8 +10869,9 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
       display: block;
       font-size: 3em;
       height: 1em;
-      width: 1em;
-      margin: 5em auto; }
+      width: 1em; }
+  .modchooser .modal-body .carousel-item .loading-icon .icon {
+    margin: 5em auto; }
 
 .modchoosercontainer.noscroll {
   overflow-y: hidden; }
@@ -10916,7 +10917,7 @@ body#page-lib-editor-tinymce-plugins-moodlemedia-preview {
   background-color: #fff;
   overflow-x: hidden;
   overflow-y: auto;
-  height: 640px; }
+  min-height: 640px; }
   .modchooser .modal-body .optionsummary .content {
     overflow-y: auto; }
     .modchooser .modal-body .optionsummary .content .heading .icon {
@@ -11524,6 +11525,11 @@ body.h5p-embed .h5pmessages {
 
 .word-break-all {
   word-break: break-all; }
+
+.matchtext {
+  background-color: #b5d9f9;
+  color: #343a40;
+  height: 1.5rem; }
 
 .emoji-picker {
   width: 350px;
@@ -14761,10 +14767,6 @@ a.ygtvspacer:hover {
     flex-shrink: 0; }
     .message-app .footer-container textarea {
       direction: ltr; }
-  .message-app .matchtext {
-    background-color: #b5d9f9;
-    color: #343a40;
-    height: 1.5rem; }
   .message-app .contact-status {
     position: absolute;
     left: 39px;
@@ -17399,6 +17401,15 @@ table caption {
   line-height: 42px;
   text-align: left;
   caption-side: top; }
+
+.table-dynamic .loading-icon {
+  position: absolute;
+  left: calc(50% - 1.5rem);
+  top: 200px; }
+  .table-dynamic .loading-icon .icon {
+    height: 3rem;
+    width: 3rem;
+    font-size: 3rem; }
 
 .singlebutton {
   display: inline-block; }
