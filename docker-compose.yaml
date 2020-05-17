@@ -1,0 +1,30 @@
+version: '2'
+services:
+  mariadb:
+    image: 'bitnami/mariadb:latest'
+    environment:
+      - MARIADB_USER=bn_moodle
+      - MARIADB_DATABASE=moodle
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - 'mariadb_data_vol:/bitnami'
+  moodle:
+    image: 'bitnami/moodle:latest'
+    environment:
+      - MARIADB_HOST=mariadb
+      - MARIADB_PORT_NUMBER=3306
+      - MOODLE_DATABASE_USER=bn_moodle
+      - MOODLE_DATABASE_NAME=moodle
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - '80:80'
+    volumes:
+      - 'moodle_data:/bitnami'
+ #     - './php.ini:/opt/bitnami/php/lib/php.ini'
+    depends_on:
+      - mariadb
+volumes:
+  mariadb_data_vol:
+    driver: local
+  moodle_data:
+    driver: local
